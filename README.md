@@ -23,6 +23,10 @@ I've added extra parameters exposed by cv2 to allow you to tweak the webcam sett
 
 Activate your comfyui environment and run `pip install opencv-python`.
 
+If you installed it correctly you should see something like this (don't worry about the .git and __pycache__ directories if you don't see them): 
+
+![](installed_correctly.png) 
+
 
 ### Suggested supporting nodes/workflows
 
