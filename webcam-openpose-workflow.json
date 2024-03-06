@@ -61,55 +61,6 @@
       ]
     },
     {
-      "id": 16,
-      "type": "ControlNetApply",
-      "pos": [
-        322.8893936746831,
-        856.0421132532957
-      ],
-      "size": {
-        "0": 317.4000244140625,
-        "1": 98
-      },
-      "flags": {},
-      "order": 12,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "conditioning",
-          "type": "CONDITIONING",
-          "link": 15
-        },
-        {
-          "name": "control_net",
-          "type": "CONTROL_NET",
-          "link": 13
-        },
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 14
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "links": [
-            16
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ControlNetApply"
-      },
-      "widgets_values": [
-        1.44
-      ]
-    },
-    {
       "id": 4,
       "type": "CheckpointLoaderSimple",
       "pos": [
@@ -196,31 +147,6 @@
       ]
     },
     {
-      "id": 13,
-      "type": "PreviewImage",
-      "pos": [
-        668,
-        929
-      ],
-      "size": {
-        "0": 297.51910400390625,
-        "1": 334.1168212890625
-      },
-      "flags": {},
-      "order": 11,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 12
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "PreviewImage"
-      }
-    },
-    {
       "id": 8,
       "type": "VAEDecode",
       "pos": [
@@ -261,67 +187,6 @@
       }
     },
     {
-      "id": 3,
-      "type": "KSampler",
-      "pos": [
-        878,
-        186
-      ],
-      "size": {
-        "0": 315,
-        "1": 474
-      },
-      "flags": {
-        "collapsed": true
-      },
-      "order": 13,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 1
-        },
-        {
-          "name": "positive",
-          "type": "CONDITIONING",
-          "link": 16
-        },
-        {
-          "name": "negative",
-          "type": "CONDITIONING",
-          "link": 6
-        },
-        {
-          "name": "latent_image",
-          "type": "LATENT",
-          "link": 2
-        }
-      ],
-      "outputs": [
-        {
-          "name": "LATENT",
-          "type": "LATENT",
-          "links": [
-            7
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "KSampler"
-      },
-      "widgets_values": [
-        319979372479416,
-        "randomize",
-        20,
-        8,
-        "euler",
-        "normal",
-        1
-      ]
-    },
-    {
       "id": 5,
       "type": "EmptyLatentImage",
       "pos": [
@@ -352,44 +217,6 @@
         992,
         704,
         1
-      ]
-    },
-    {
-      "id": 6,
-      "type": "CLIPTextEncode",
-      "pos": [
-        415,
-        186
-      ],
-      "size": {
-        "0": 422.84503173828125,
-        "1": 164.31304931640625
-      },
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 3
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "links": [
-            15
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "CLIPTextEncode"
-      },
-      "widgets_values": [
-        "two people standing on a mountain, sunset, golden hour"
       ]
     },
     {
@@ -522,9 +349,11 @@
         1,
         1,
         1,
-        192046924130908,
+        164290624196802,
         "randomize"
-      ]
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
     },
     {
       "id": 18,
@@ -549,7 +378,32 @@
       ],
       "properties": {
         "Node name for S&R": "PreviewImage"
-      }
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 26,
+      "type": "Note",
+      "pos": [
+        -346,
+        1135
+      ],
+      "size": [
+        266.3174044372559,
+        274.768473814087
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "Use the load image to troubleshoot the controlnet without having to use the webcam.\n\nYou may need to adjust your webcap capture settings depending on your webcam. I suggest leaving autofocus, autowb, and autoexp turned on, and tweak your exposure.\n\nYou can use a different Pose Estimator (replace OpenPose Pose) and anothr Controlnet selection on Load ControlNetModel.\n\nOpenPose Pose and OpenPoseXL2.safetensors work well together. "
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
     },
     {
       "id": 12,
@@ -563,7 +417,7 @@
         297.8526697610473
       ],
       "flags": {},
-      "order": 4,
+      "order": 5,
       "mode": 0,
       "outputs": [
         {
@@ -589,27 +443,179 @@
       ]
     },
     {
-      "id": 26,
-      "type": "Note",
+      "id": 13,
+      "type": "PreviewImage",
       "pos": [
-        -346,
-        1135
+        668,
+        929
       ],
-      "size": [
-        266.3174044372559,
-        274.768473814087
-      ],
+      "size": {
+        "0": 297.51910400390625,
+        "1": 334.1168212890625
+      },
       "flags": {},
-      "order": 5,
+      "order": 11,
       "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 12
+        }
+      ],
       "properties": {
-        "text": ""
+        "Node name for S&R": "PreviewImage"
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 3,
+      "type": "KSampler",
+      "pos": [
+        878,
+        186
+      ],
+      "size": {
+        "0": 315,
+        "1": 474
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 1
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 16
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 6
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            7
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        "Use the load image to troubleshoot the controlnet without having to use the webcam.\n\nYou may need to adjust your webcap capture settings depending on your webcam. I suggest leaving autofocus, autowb, and autoexp turned on, and tweak your exposure.\n\nYou can use a different Pose Estimator (replace OpenPose Pose) and anothr Controlnet selection on Load ControlNetModel.\n\nOpenPose Pose and OpenPoseXL2.safetensors work well together. "
+        99269917960409,
+        "randomize",
+        20,
+        8,
+        "euler",
+        "normal",
+        1
+      ]
+    },
+    {
+      "id": 16,
+      "type": "ControlNetApply",
+      "pos": [
+        322.8893936746831,
+        856.0421132532957
       ],
-      "color": "#432",
-      "bgcolor": "#653"
+      "size": {
+        "0": 317.4000244140625,
+        "1": 98
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 15
+        },
+        {
+          "name": "control_net",
+          "type": "CONTROL_NET",
+          "link": 13
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 14
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            16
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ControlNetApply"
+      },
+      "widgets_values": [
+        1.03
+      ]
+    },
+    {
+      "id": 6,
+      "type": "CLIPTextEncode",
+      "pos": [
+        415,
+        186
+      ],
+      "size": {
+        "0": 422.84503173828125,
+        "1": 164.31304931640625
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            15
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "two adults standing on a mountain facing the camera, sunset, golden hour, cinematic masterpiece"
+      ]
     }
   ],
   "links": [

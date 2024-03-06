@@ -1,21 +1,23 @@
 # Comfyui Webcam capture node
 
-This node captures images one at a time from your webcam. 
+This node captures images one at a time from your webcam when you click generate.
 
 This is particular useful for img2img or controlnet workflows. 
 
 This node will take over your webcam, so if you have another program using it, you may need to close that program first.  Likewise, you may need to close Comfyui or close the workflow to release the webcam.
 
+![](working.png)
+
 ### Why do we need another webcam node?
 
-The other ones simply don't work or are buggy, produce black images, digital noise, etc. 
+The other ones simply don't work for me or are buggy, produce black images, digital noise, etc. 
 
 I've added extra parameters exposed by cv2 to allow you to tweak the webcam settings to (hopefully) get yours to work. There's no gaurantee every parameter will work on every webcam, but the hope is by exposing them you can tweak them to get your webcam to work. Defaults should be sane.
 
 ### Ideas for use
 
-* Setup an action figure in front of your webcam and use pose estimation and pose controlnet.
-* Point it at yourself and use a depth estimator and controlnet.
+* Setup an action figure in front of your webcam and use body pose estimation and a pose controlnet.
+* Point it at yourself and use a depth estimator or face pose estimator.
 
 ### Install
 
@@ -23,7 +25,7 @@ I've added extra parameters exposed by cv2 to allow you to tweak the webcam sett
 
 Activate your comfyui environment and run `pip install opencv-python`.
 
-If you installed it correctly you should see something like this (don't worry about the .git and __pycache__ directories if you don't see them): 
+If you installed it correctly you should see something like this (don't worry about the .git and \_\_pycache\_\_ directories if you don't see them): 
 
 ![](installed_correctly.png) 
 
