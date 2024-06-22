@@ -10,6 +10,6 @@ Repository = "https://github.com/victorchall/comfyui_webcamcapture"
 #  Used by Comfy Registry https://comfyregistry.org
 
 [tool.comfy]
-PublisherId = ""
+PublisherId = "victorchall"
 DisplayName = "comfyui_webcamcapture"
 Icon = ""
