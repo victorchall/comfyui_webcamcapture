@@ -2,7 +2,7 @@
 name = "comfyui_webcamcapture"
 description = "This node captures images one at a time from your webcam when you click generate.\nThis is particular useful for img2img or controlnet workflows.\nNOTE:This node will take over your webcam, so if you have another program using it, you may need to close that program first. Likewise, you may need to close Comfyui or close the workflow to release the webcam."
 version = "1.0.0"
-license = "LICENSE"
+license = { file = "LICENSE" }
 dependencies = ["opencv-python"]
 
 [project.urls]
